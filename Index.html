@@ -1,0 +1,1494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plant House Rose Nursery — Pune</title>
+  <meta name="description" content="Plant House Rose Nursery — Quality plants at Shiva Farm, Koregaon Mul, Pune.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════
+       DESIGN: Refined botanical — deep forest
+       green + warm ivory. Two colours, done well.
+    ══════════════════════════════════════ */
+    :root {
+      --green:      #2d5f3f;
+      --green-dark: #1a3d28;
+      --green-mid:  #3d7a54;
+      --green-pale: #e8f0eb;
+      --green-mist: #f2f6f3;
+      --ivory:      #faf8f3;
+      --ivory-dark: #f0ece3;
+      --text:       #1c2b20;
+      --text-mid:   #4a6350;
+      --text-soft:  #7a9080;
+      --line:       rgba(45,95,63,0.12);
+      --white:      #ffffff;
+      --r:          10px;
+      --t:          0.28s cubic-bezier(0.4,0,0.2,1);
+      --shadow:     0 4px 24px rgba(26,61,40,0.10);
+      --shadow-lg:  0 12px 48px rgba(26,61,40,0.16);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--ivory);overflow-x:hidden;line-height:1.7;}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--ivory)}
+    ::-webkit-scrollbar-thumb{background:var(--green-mid);border-radius:3px}
+
+    /* ══ NAVBAR ══ */
+    .navbar{
+      position:fixed;top:0;left:0;right:0;z-index:900;
+      background:rgba(250,248,243,0.97);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+      transition:var(--t);
+    }
+    .navbar.scrolled{box-shadow:var(--shadow);}
+    .nav-inner{
+      max-width:1200px;margin:0 auto;
+      padding:0 28px;
+      display:flex;align-items:center;height:70px;gap:20px;
+    }
+
+    /* ── LOGO — matches uploaded image exactly ── */
+    .nav-logo{
+      display:flex;align-items:center;
+      text-decoration:none;flex-shrink:0;
+    }
+    .logo-icon-wrap{flex-shrink:0;}
+    .logo-text-block{
+      display:flex;flex-direction:column;
+      line-height:1;gap:0px;
+    }
+    .logo-main{
+      font-family:'Cormorant Garamond',serif;
+      font-size:30px;font-weight:700;
+      color:var(--green);letter-spacing:1px;
+      text-transform:uppercase;
+      display:block;line-height:1;
+    }
+    .logo-sub{
+      font-family:'DM Sans',sans-serif;
+      font-size:9px;font-weight:700;
+      letter-spacing:4.5px;text-transform:uppercase;
+      color:var(--green);display:block;margin-top:5px;
+    }
+
+    .nav-menu{
+      display:flex;list-style:none;
+      gap:2px;align-items:center;margin-left:auto;
+    }
+    .nav-link{
+      color:var(--text-mid);text-decoration:none;
+      font-size:14px;font-weight:500;
+      padding:7px 14px;border-radius:6px;
+      transition:var(--t);
+    }
+    .nav-link:hover{color:var(--green);background:var(--green-pale);}
+    .nav-link.active{color:var(--green);font-weight:600;}
+    .nav-cta{
+      background:var(--green);color:var(--white);
+      border:none;border-radius:7px;
+      padding:9px 20px;font-size:14px;font-weight:600;
+      cursor:pointer;transition:var(--t);font-family:'DM Sans',sans-serif;
+      display:flex;align-items:center;gap:7px;
+      position:relative;
+    }
+    .nav-cta:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:var(--shadow);}
+    .cta-badge{
+      background:var(--ivory);color:var(--green);
+      border-radius:50%;width:18px;height:18px;
+      font-size:11px;font-weight:700;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .mob-btn{
+      display:none;flex-direction:column;gap:5px;
+      background:none;border:none;cursor:pointer;padding:8px;margin-left:auto;
+    }
+    .mob-btn span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:var(--t);}
+
+    /* ══ HERO ══ */
+    .hero{
+      min-height:100vh;
+      display:flex;align-items:center;
+      position:relative;overflow:hidden;
+      padding-top:70px;
+    }
+    .hero-bg{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(160deg,var(--green-dark) 0%,var(--green) 55%,var(--green-mid) 100%);
+    }
+    /* Subtle leaf texture overlay */
+    .hero-bg::after{
+      content:'';position:absolute;inset:0;
+      background:url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+      opacity:0.14;mix-blend-mode:luminosity;
+    }
+    /* Diagonal ivory cut bottom */
+    .hero-cut{
+      position:absolute;bottom:-1px;left:0;right:0;
+      height:80px;
+      background:var(--ivory);
+      clip-path:polygon(0 100%,100% 0,100% 100%);
+    }
+    .hero-inner{
+      position:relative;z-index:2;
+      max-width:1200px;margin:0 auto;padding:80px 28px 120px;
+      display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+    }
+    .hero-text{}
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:5px 14px;
+      color:rgba(255,255,255,0.8);font-size:12px;font-weight:500;
+      letter-spacing:1.5px;text-transform:uppercase;
+      margin-bottom:24px;
+      animation:fadeUp 0.8s ease both;
+    }
+    .hero-eyebrow span{
+      display:inline-block;width:6px;height:6px;
+      border-radius:50%;background:rgba(255,255,255,0.6);
+    }
+    .hero h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(42px,5.5vw,72px);font-weight:600;
+      color:var(--white);line-height:1.1;
+      margin-bottom:22px;
+      animation:fadeUp 0.9s ease 0.1s both;
+    }
+    .hero h1 em{font-style:italic;color:rgba(255,255,255,0.75);}
+    .hero-desc{
+      font-size:16px;color:rgba(255,255,255,0.75);
+      font-weight:300;max-width:440px;margin-bottom:36px;
+      animation:fadeUp 1s ease 0.2s both;
+    }
+    .hero-btns{
+      display:flex;gap:12px;flex-wrap:wrap;
+      animation:fadeUp 1.1s ease 0.3s both;
+    }
+    .btn{
+      padding:12px 28px;font-size:14px;font-weight:600;
+      text-decoration:none;border-radius:7px;
+      transition:var(--t);cursor:pointer;
+      display:inline-flex;align-items:center;gap:8px;
+      font-family:'DM Sans',sans-serif;border:1.5px solid transparent;
+    }
+    .btn-ivory{background:var(--white);color:var(--green);}
+    .btn-ivory:hover{background:var(--ivory);transform:translateY(-2px);box-shadow:var(--shadow);}
+    .btn-outline-w{background:transparent;color:white;border-color:rgba(255,255,255,0.4);}
+    .btn-outline-w:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+    .btn-green{background:var(--green);color:white;}
+    .btn-green:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:var(--shadow);}
+    .btn-outline-green{background:transparent;color:var(--green);border-color:var(--green);}
+    .btn-outline-green:hover{background:var(--green-pale);}
+
+    /* Hero right: logo showcase */
+    .hero-logo-showcase{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      animation:fadeUp 1s ease 0.15s both;
+    }
+    .hero-logo-card{
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:20px;padding:48px 52px;
+      display:flex;align-items:center;gap:28px;
+    }
+    .hlc-text .hl-main{
+      font-family:'Cormorant Garamond',serif;
+      font-size:52px;font-weight:700;
+      color:white;line-height:1;display:block;
+    }
+    .hlc-text .hl-sub{
+      font-size:13px;font-weight:500;letter-spacing:4px;
+      text-transform:uppercase;color:rgba(255,255,255,0.65);
+      display:block;margin-top:6px;
+    }
+
+    /* ══ STATS ══ */
+    .stats{
+      background:var(--green);padding:32px 0;
+    }
+    .stats-inner{
+      max-width:1200px;margin:0 auto;padding:0 28px;
+      display:grid;grid-template-columns:repeat(4,1fr);
+    }
+    .stat{
+      text-align:center;padding:16px;
+      border-right:1px solid rgba(255,255,255,0.1);
+    }
+    .stat:last-child{border-right:none;}
+    .stat-num{
+      font-family:'Cormorant Garamond',serif;
+      font-size:38px;font-weight:700;color:white;
+      display:block;margin-bottom:2px;
+    }
+    .stat-lbl{
+      font-size:11px;font-weight:500;
+      letter-spacing:1.5px;text-transform:uppercase;
+      color:rgba(255,255,255,0.6);
+    }
+
+    /* ══ SECTIONS ══ */
+    .section{padding:96px 0;}
+    .container{max-width:1200px;margin:0 auto;padding:0 28px;}
+    .sec-bg{background:var(--green-mist);}
+
+    .eyebrow{
+      display:inline-block;font-size:11px;font-weight:600;
+      letter-spacing:3px;text-transform:uppercase;
+      color:var(--green-mid);margin-bottom:12px;
+    }
+    .sec-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(30px,3.5vw,46px);font-weight:600;
+      color:var(--green-dark);line-height:1.2;margin-bottom:14px;
+    }
+    .sec-sub{font-size:15px;color:var(--text-mid);max-width:520px;font-weight:300;}
+    .sec-head{text-align:center;margin-bottom:60px;}
+    .sec-head .sec-sub{margin:0 auto;}
+
+    /* ══ INTRO ══ */
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .intro-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;}
+    .intro-img img{width:100%;display:block;transition:transform 0.6s ease;}
+    .intro-img:hover img{transform:scale(1.03);}
+    .intro-stamp{
+      position:absolute;bottom:-14px;right:-14px;
+      background:var(--green);color:white;
+      border-radius:12px;padding:16px 20px;text-align:center;
+      box-shadow:var(--shadow-lg);
+    }
+    .intro-stamp strong{display:block;font-family:'Cormorant Garamond',serif;font-size:32px;line-height:1;}
+    .intro-stamp span{font-size:10px;font-weight:500;opacity:0.8;letter-spacing:0.5px;}
+    .intro-text p{color:var(--text-mid);margin-bottom:16px;font-size:15px;font-weight:300;}
+
+    /* ══ PLANTS ══ */
+    .filter-row{
+      display:flex;gap:8px;flex-wrap:wrap;
+      margin-bottom:40px;align-items:center;
+    }
+    .fpill{
+      padding:7px 18px;border-radius:50px;
+      border:1.5px solid var(--line);
+      background:white;color:var(--text-mid);
+      font-size:13px;font-weight:500;cursor:pointer;
+      transition:var(--t);font-family:'DM Sans',sans-serif;
+    }
+    .fpill:hover{border-color:var(--green);color:var(--green);}
+    .fpill.active{background:var(--green);color:white;border-color:var(--green);}
+    .srch{position:relative;margin-left:auto;}
+    .srch input{
+      padding:8px 16px 8px 38px;border-radius:50px;
+      border:1.5px solid var(--line);font-size:13px;
+      font-family:'DM Sans',sans-serif;background:white;
+      color:var(--text);outline:none;width:210px;
+      transition:var(--t);
+    }
+    .srch input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(45,95,63,0.08);}
+    .srch::before{content:'⌕';position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-soft);font-size:16px;pointer-events:none;}
+
+    .pgrid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(222px,1fr));
+      gap:20px;
+    }
+    .pcard{
+      background:white;border-radius:12px;overflow:hidden;
+      border:1px solid var(--line);
+      transition:var(--t);display:flex;flex-direction:column;
+    }
+    .pcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(45,95,63,0.25);}
+    .pcard-img{position:relative;overflow:hidden;}
+    .pcard-img img{width:100%;height:175px;object-fit:cover;transition:transform 0.5s ease;display:block;}
+    .pcard:hover .pcard-img img{transform:scale(1.07);}
+    .pcard-overlay{
+      position:absolute;inset:0;background:rgba(26,61,40,0.78);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+      opacity:0;transition:var(--t);padding:16px;
+    }
+    .pcard:hover .pcard-overlay{opacity:1;}
+    .pcard-overlay .ov-wa{
+      display:flex;align-items:center;gap:8px;
+      background:#25D366;color:white;border:none;
+      border-radius:50px;padding:10px 22px;
+      font-size:13px;font-weight:700;cursor:pointer;
+      font-family:'DM Sans',sans-serif;
+      text-decoration:none;width:100%;justify-content:center;
+      transition:var(--t);box-shadow:0 4px 14px rgba(0,0,0,0.2);
+    }
+    .pcard-overlay .ov-wa:hover{background:#1ebe5d;transform:scale(1.04);}
+    .pcard-overlay .ov-sms{
+      display:flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,0.15);color:white;
+      border:1.5px solid rgba(255,255,255,0.5);
+      border-radius:50px;padding:9px 22px;
+      font-size:13px;font-weight:600;cursor:pointer;
+      font-family:'DM Sans',sans-serif;
+      text-decoration:none;width:100%;justify-content:center;
+      transition:var(--t);
+    }
+    .pcard-overlay .ov-sms:hover{background:rgba(255,255,255,0.28);transform:scale(1.04);}
+    .pcard-overlay .ov-list{
+      background:none;color:rgba(255,255,255,0.7);border:none;
+      font-size:12px;font-weight:500;cursor:pointer;
+      font-family:'DM Sans',sans-serif;
+      text-decoration:underline;padding:2px;
+      transition:var(--t);
+    }
+    .pcard-overlay .ov-list:hover{color:white;}
+    .pcard-body{padding:14px 15px;flex:1;display:flex;flex-direction:column;}
+    .ptag{
+      display:inline-block;
+      background:var(--green-pale);color:var(--green-mid);
+      font-size:10px;font-weight:600;padding:2px 9px;
+      border-radius:20px;margin-bottom:7px;
+      letter-spacing:0.5px;text-transform:uppercase;
+    }
+    .pname{font-size:14px;color:var(--green-dark);font-weight:600;margin-bottom:4px;}
+    .pmeta{font-size:12px;color:var(--text-soft);margin-bottom:2px;}
+    .pprice{
+      font-family:'Cormorant Garamond',serif;
+      font-size:19px;font-weight:700;color:var(--green);
+      margin-top:auto;padding-top:8px;
+    }
+
+    /* ══ ABOUT ══ */
+    .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;}
+    .about-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);}
+    .about-img img{width:100%;display:block;}
+    .about-text p{color:var(--text-mid);margin-bottom:16px;font-size:15px;font-weight:300;}
+    .vlist{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+    .vlist li{
+      display:flex;align-items:flex-start;gap:12px;
+      font-size:14px;color:var(--text-mid);font-weight:400;
+    }
+    .vlist li::before{
+      content:'';display:inline-block;
+      width:6px;height:6px;border-radius:50%;
+      background:var(--green);flex-shrink:0;margin-top:8px;
+    }
+    .vlist strong{color:var(--green-dark);}
+
+    /* ══ WHY US ══ */
+    .wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+    .wcard{
+      background:white;border-radius:12px;padding:32px 26px;
+      border:1px solid var(--line);transition:var(--t);
+    }
+    .wcard:hover{border-color:rgba(45,95,63,0.3);box-shadow:var(--shadow);transform:translateY(-4px);}
+    .wcard-icon{
+      width:48px;height:48px;border-radius:12px;
+      background:var(--green-pale);
+      display:flex;align-items:center;justify-content:center;
+      font-size:22px;margin-bottom:16px;
+    }
+    .wcard h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--green-dark);margin-bottom:8px;}
+    .wcard p{font-size:14px;color:var(--text-mid);line-height:1.65;font-weight:300;}
+
+    /* ══ NEWSLETTER ══ */
+    .nl{background:var(--green-dark);padding:80px 0;position:relative;overflow:hidden;}
+    .nl::before{
+      content:'';position:absolute;
+      width:400px;height:400px;border-radius:50%;
+      background:rgba(255,255,255,0.03);
+      top:-150px;right:-100px;
+    }
+    .nl::after{
+      content:'';position:absolute;
+      width:300px;height:300px;border-radius:50%;
+      background:rgba(255,255,255,0.03);
+      bottom:-100px;left:-80px;
+    }
+    .nl-inner{max-width:560px;margin:0 auto;text-align:center;padding:0 28px;position:relative;z-index:1;}
+    .nl-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,40px);font-weight:600;color:white;margin-bottom:10px;}
+    .nl-inner p{color:rgba(255,255,255,0.65);margin-bottom:28px;font-size:15px;font-weight:300;}
+    .nl-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+    .nl-form input{
+      flex:1;min-width:230px;padding:12px 18px;border-radius:7px;
+      border:1px solid rgba(255,255,255,0.2);
+      background:rgba(255,255,255,0.08);color:white;
+      font-size:14px;font-family:'DM Sans',sans-serif;outline:none;
+    }
+    .nl-form input::placeholder{color:rgba(255,255,255,0.4);}
+    .nl-form input:focus{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.12);}
+    .nl-form button{
+      padding:12px 24px;background:white;color:var(--green);
+      border:none;border-radius:7px;font-size:14px;font-weight:600;
+      cursor:pointer;transition:var(--t);font-family:'DM Sans',sans-serif;
+    }
+    .nl-form button:hover{background:var(--ivory);transform:translateY(-1px);}
+
+    /* ══ CONTACT ══ */
+    .cgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;margin-bottom:52px;}
+    .cinfo{display:flex;flex-direction:column;gap:16px;}
+    .citem{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:16px;border-radius:10px;
+      border:1px solid var(--line);background:white;
+      transition:var(--t);
+    }
+    .citem:hover{border-color:rgba(45,95,63,0.25);}
+    .cico{
+      width:40px;height:40px;border-radius:9px;
+      background:var(--green-pale);display:flex;align-items:center;justify-content:center;
+      font-size:18px;flex-shrink:0;
+    }
+    .citem h4{font-size:12px;font-weight:600;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;}
+    .citem p,.citem a{font-size:14px;color:var(--text-mid);text-decoration:none;font-weight:300;}
+    .citem a:hover{color:var(--green);}
+    .cform-box{background:white;border-radius:14px;padding:36px;border:1px solid var(--line);box-shadow:var(--shadow);}
+    .cform-box h3{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--green-dark);margin-bottom:4px;}
+    .cform-box .csub{color:var(--text-soft);font-size:13px;margin-bottom:24px;font-weight:300;}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .fg{margin-bottom:14px;}
+    .fg label{display:block;font-size:11px;font-weight:600;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;}
+    .fg input,.fg textarea{
+      width:100%;padding:10px 13px;border-radius:8px;
+      border:1.5px solid var(--line);font-size:14px;
+      font-family:'DM Sans',sans-serif;background:var(--ivory);
+      color:var(--text);outline:none;font-weight:300;
+      transition:border-color var(--t);
+    }
+    .fg input:focus,.fg textarea:focus{border-color:var(--green);background:white;}
+    .fg textarea{resize:vertical;min-height:95px;}
+    .fsuccess{display:none;text-align:center;padding:32px;}
+    .fsuccess .fsi{font-size:48px;display:block;margin-bottom:10px;}
+    .fsuccess h4{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--green-dark);margin-bottom:6px;}
+    .fsuccess p{color:var(--text-soft);font-size:14px;}
+    .map-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+    .map-wrap iframe{display:block;}
+
+    /* ══ FOOTER ══ */
+    .footer{background:var(--green-dark);color:white;padding:64px 0 0;}
+    .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:52px;margin-bottom:52px;}
+    .fbrand{}
+    /* Footer logo */
+    .flogo{display:flex;align-items:center;gap:12px;margin-bottom:16px;text-decoration:none;}
+    .flogo-icon{flex-shrink:0;}
+    .flogo-text .fm{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:white;display:block;line-height:1;}
+    .flogo-text .fs{font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);display:block;margin-top:3px;}
+    .fbrand p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.75;font-weight:300;}
+    .social-row{display:flex;gap:10px;margin-top:18px;}
+    .sb{
+      width:36px;height:36px;border-radius:8px;
+      background:rgba(255,255,255,0.08);
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(255,255,255,0.65);text-decoration:none;
+      font-size:13px;font-weight:600;transition:var(--t);
+    }
+    .sb:hover{background:rgba(255,255,255,0.18);color:white;transform:translateY(-2px);}
+    .footer h4{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;}
+    .footer ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .footer ul a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:14px;font-weight:300;transition:color var(--t);}
+    .footer ul a:hover{color:white;}
+    .fbot{border-top:1px solid rgba(255,255,255,0.08);padding:20px 0;text-align:center;color:rgba(255,255,255,0.35);font-size:12px;}
+
+    /* ══ MODAL ══ */
+    .modal-bg{
+      position:fixed;inset:0;z-index:2000;
+      background:rgba(10,25,16,0.65);backdrop-filter:blur(5px);
+      display:flex;align-items:center;justify-content:center;padding:20px;
+      opacity:0;pointer-events:none;transition:opacity var(--t);
+    }
+    .modal-bg.open{opacity:1;pointer-events:all;}
+    .modal{
+      background:white;border-radius:16px;max-width:460px;width:100%;
+      padding:34px;position:relative;
+      transform:scale(0.93) translateY(16px);transition:var(--t);
+      box-shadow:0 32px 80px rgba(0,0,0,0.25);
+      border-top:3px solid var(--green);
+    }
+    .modal-bg.open .modal{transform:scale(1) translateY(0);}
+    .mclose{position:absolute;top:14px;right:14px;background:var(--green-pale);border:none;width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-mid);transition:var(--t);}
+    .mclose:hover{background:var(--green);color:white;transform:rotate(90deg);}
+    .modal h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--green-dark);margin-bottom:5px;}
+    .modal>p{color:var(--text-soft);font-size:13px;margin-bottom:18px;font-weight:300;}
+    .m-chip{background:var(--green-mist);border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:18px;}
+    .m-chip strong{color:var(--green-dark);font-size:15px;display:block;margin-bottom:2px;}
+    .m-chip small{color:var(--text-soft);font-size:12px;}
+    .m-actions{display:flex;gap:10px;margin-top:4px;}
+
+    /* ══ CART DRAWER ══ */
+    .drawer-bg{position:fixed;inset:0;background:rgba(10,25,16,0.4);z-index:1500;opacity:0;pointer-events:none;transition:opacity var(--t);}
+    .drawer-bg.open{opacity:1;pointer-events:all;}
+    .drawer{
+      position:fixed;top:0;right:-420px;bottom:0;width:400px;
+      background:white;z-index:1501;
+      display:flex;flex-direction:column;
+      transition:right 0.34s cubic-bezier(0.4,0,0.2,1);
+      box-shadow:-8px 0 40px rgba(0,0,0,0.12);
+      border-left:2px solid var(--line);
+    }
+    .drawer.open{right:0;}
+    .dhead{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;}
+    .dhead h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--green-dark);}
+    .dclose{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-soft);transition:var(--t);}
+    .dclose:hover{color:var(--green);}
+    .dbody{flex:1;overflow-y:auto;padding:18px 22px;}
+    .dempty{text-align:center;padding:52px 0;color:var(--text-soft);}
+    .dempty span{font-size:44px;display:block;margin-bottom:12px;}
+    .ditem{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center;}
+    .ditem img{width:58px;height:58px;border-radius:8px;object-fit:cover;flex-shrink:0;border:1px solid var(--line);}
+    .ditem-info{flex:1;}
+    .ditem-info h5{font-size:13px;color:var(--green-dark);font-weight:600;margin-bottom:2px;}
+    .ditem-info small{font-size:11px;color:var(--text-soft);}
+    .ditem-price{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--green);font-weight:700;}
+    .ditem-rm{background:none;border:none;cursor:pointer;color:var(--text-soft);font-size:15px;transition:color var(--t);}
+    .ditem-rm:hover{color:red;}
+    .dfoot{padding:16px 22px;border-top:1px solid var(--line);}
+    .dnote{font-size:11px;color:var(--text-soft);margin-bottom:12px;text-align:center;line-height:1.5;}
+
+    /* ══ TOAST ══ */
+    .toasts{position:fixed;bottom:22px;right:22px;z-index:9999;display:flex;flex-direction:column;gap:9px;}
+    .toast{
+      background:var(--green-dark);color:white;
+      padding:12px 18px;border-radius:10px;
+      font-size:13px;font-weight:500;max-width:300px;
+      display:flex;align-items:center;gap:9px;
+      box-shadow:var(--shadow-lg);
+      animation:tin 0.3s ease, tout 0.35s ease 3s forwards;
+    }
+    @keyframes tin{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
+    @keyframes tout{to{opacity:0;transform:translateX(110%)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    /* ══════════════════════════════════════
+       FLOATING BOTS — fixed bottom-right
+    ══════════════════════════════════════ */
+    .float-bots{
+      position:fixed;bottom:28px;right:28px;
+      display:flex;flex-direction:column;gap:14px;
+      z-index:800;
+      align-items:flex-end;
+    }
+
+    /* Bot trigger buttons */
+    .bot-trigger{
+      width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 6px 24px rgba(26,61,40,0.25);
+      transition:var(--t);position:relative;
+      flex-shrink:0;
+    }
+    .bot-trigger:hover{transform:scale(1.1) translateY(-2px);box-shadow:0 10px 32px rgba(26,61,40,0.3);}
+    .bt-chat{background:var(--green);}
+    .bt-contact{background:var(--green-dark);}
+    .bot-trigger svg{width:24px;height:24px;}
+    .bot-trigger .bt-label{
+      position:absolute;right:60px;
+      background:var(--green-dark);color:white;
+      font-size:12px;font-weight:600;white-space:nowrap;
+      padding:5px 12px;border-radius:20px;
+      opacity:0;transition:var(--t);pointer-events:none;
+      box-shadow:var(--shadow);
+    }
+    .bot-trigger:hover .bt-label{opacity:1;right:64px;}
+    .bt-dot{
+      position:absolute;top:3px;right:3px;
+      width:12px;height:12px;border-radius:50%;
+      background:#4cdc7a;border:2px solid white;
+    }
+
+    /* Floating panels */
+    .bot-panel{
+      position:absolute;bottom:0;right:66px;
+      width:340px;
+      background:white;border-radius:16px;
+      box-shadow:0 16px 60px rgba(26,61,40,0.18);
+      border:1px solid var(--line);
+      display:flex;flex-direction:column;
+      overflow:hidden;
+      transform:scale(0.9) translateY(12px);
+      opacity:0;pointer-events:none;
+      transition:var(--t);
+      transform-origin:bottom right;
+      max-height:480px;
+    }
+    .bot-panel.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all;}
+
+    /* Panel header */
+    .bp-head{
+      padding:14px 16px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .bp-head.chat-head{background:var(--green);}
+    .bp-head.contact-head{background:var(--green-dark);}
+    .bp-avatar{
+      width:36px;height:36px;border-radius:50%;
+      background:rgba(255,255,255,0.2);
+      display:flex;align-items:center;justify-content:center;
+      font-size:18px;flex-shrink:0;
+    }
+    .bp-info{flex:1;}
+    .bp-name{font-size:13px;font-weight:600;color:white;display:block;}
+    .bp-status{font-size:11px;color:rgba(255,255,255,0.7);display:flex;align-items:center;gap:4px;}
+    .bp-status::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#4cdc7a;}
+    .bp-close{background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;line-height:1;transition:var(--t);}
+    .bp-close:hover{color:white;}
+
+    /* Chat messages area */
+    .bp-msgs{
+      flex:1;overflow-y:auto;padding:14px;
+      display:flex;flex-direction:column;gap:10px;
+      max-height:280px;background:var(--ivory);
+    }
+    .msg{display:flex;gap:8px;align-items:flex-end;}
+    .msg.bot{flex-direction:row;}
+    .msg.user{flex-direction:row-reverse;}
+    .msg-avatar{
+      width:26px;height:26px;border-radius:50%;
+      background:var(--green-pale);
+      display:flex;align-items:center;justify-content:center;
+      font-size:13px;flex-shrink:0;
+    }
+    .msg-bubble{
+      max-width:200px;padding:9px 13px;border-radius:14px;
+      font-size:13px;line-height:1.5;font-weight:400;
+    }
+    .msg.bot .msg-bubble{background:white;color:var(--text);border:1px solid var(--line);border-bottom-left-radius:4px;}
+    .msg.user .msg-bubble{background:var(--green);color:white;border-bottom-right-radius:4px;}
+
+    /* Quick reply chips */
+    .qr-wrap{padding:10px 14px;display:flex;flex-wrap:wrap;gap:6px;background:var(--ivory);border-top:1px solid var(--line);}
+    .qr{
+      background:white;border:1.5px solid var(--line);
+      border-radius:50px;padding:5px 13px;
+      font-size:12px;font-weight:500;cursor:pointer;
+      color:var(--green);transition:var(--t);font-family:'DM Sans',sans-serif;
+    }
+    .qr:hover{background:var(--green);color:white;border-color:var(--green);}
+
+    /* Chat input */
+    .bp-input-row{
+      padding:10px 12px;border-top:1px solid var(--line);
+      display:flex;gap:8px;background:white;
+    }
+    .bp-input-row input{
+      flex:1;padding:8px 12px;border-radius:50px;
+      border:1.5px solid var(--line);font-size:13px;
+      font-family:'DM Sans',sans-serif;outline:none;
+      transition:var(--t);background:var(--ivory);
+    }
+    .bp-input-row input:focus{border-color:var(--green);background:white;}
+    .bp-send{
+      width:34px;height:34px;border-radius:50%;
+      background:var(--green);color:white;border:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:var(--t);flex-shrink:0;
+    }
+    .bp-send:hover{background:var(--green-dark);}
+
+    /* WhatsApp bot button */
+    .bt-whatsapp{background:#25D366;}
+    .bt-whatsapp:hover{background:#1ebe5d;}
+    /* WhatsApp panel quick-actions */
+    .wa-panel-body{padding:16px;background:var(--ivory);flex:1;}
+    .wa-greeting{
+      background:white;border-radius:12px;padding:14px 16px;
+      margin-bottom:14px;border:1px solid var(--line);
+      font-size:13px;color:var(--text-mid);line-height:1.6;
+    }
+    .wa-greeting strong{color:var(--green-dark);display:block;margin-bottom:4px;font-size:14px;}
+    .wa-options{display:flex;flex-direction:column;gap:8px;}
+    .wa-opt{
+      display:flex;align-items:center;gap:10px;
+      background:white;border:1.5px solid var(--line);
+      border-radius:10px;padding:11px 14px;
+      font-size:13px;font-weight:500;color:var(--green-dark);
+      cursor:pointer;transition:var(--t);text-decoration:none;
+      font-family:'DM Sans',sans-serif;
+    }
+    .wa-opt:hover{border-color:#25D366;background:#f0fdf4;color:#1a5c2a;}
+    .wa-opt .wa-ico{font-size:18px;flex-shrink:0;}
+    .wa-opt .wa-arrow{margin-left:auto;color:var(--text-soft);font-size:16px;}
+    .wa-footer{
+      padding:12px 16px;background:white;
+      border-top:1px solid var(--line);
+      display:flex;align-items:center;gap:8px;
+    }
+    .wa-footer a{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      width:100%;background:#25D366;color:white;
+      border-radius:8px;padding:11px;font-size:13px;font-weight:600;
+      text-decoration:none;transition:var(--t);font-family:'DM Sans',sans-serif;
+    }
+    .wa-footer a:hover{background:#1ebe5d;}
+
+    /* ══ HERO PLANT ANIMATIONS ══ */
+    /* Floating plant cards that drift around the hero */
+    .hero-plants{
+      position:absolute;inset:0;pointer-events:none;
+      overflow:hidden;z-index:1;
+    }
+    .hp{
+      position:absolute;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(6px);
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:14px;
+      padding:10px 14px;
+      display:flex;align-items:center;gap:8px;
+      color:white;font-size:12px;font-weight:500;
+      white-space:nowrap;
+      animation:floatPlant linear infinite;
+    }
+    .hp-icon{font-size:20px;}
+    .hp span{opacity:0.85;}
+    .hp:nth-child(1){top:15%;left:5%; animation-duration:18s;animation-delay:0s;}
+    .hp:nth-child(2){top:55%;left:2%; animation-duration:22s;animation-delay:-5s;}
+    .hp:nth-child(3){top:25%;right:3%; animation-duration:20s;animation-delay:-3s;}
+    .hp:nth-child(4){top:70%;right:5%; animation-duration:16s;animation-delay:-8s;}
+    .hp:nth-child(5){top:40%;left:6%; animation-duration:24s;animation-delay:-12s;}
+    .hp:nth-child(6){top:80%;left:18%; animation-duration:19s;animation-delay:-6s;}
+    .hp:nth-child(7){top:10%;right:18%; animation-duration:21s;animation-delay:-9s;}
+
+    @keyframes floatPlant{
+      0%  {transform:translateY(0px) rotate(0deg);opacity:0.7;}
+      25% {transform:translateY(-18px) rotate(1.5deg);opacity:0.9;}
+      50% {transform:translateY(-8px) rotate(-1deg);opacity:0.8;}
+      75% {transform:translateY(-22px) rotate(2deg);opacity:0.9;}
+      100%{transform:translateY(0px) rotate(0deg);opacity:0.7;}
+    }
+
+    /* Pulsing leaf particles */
+    .hero-leaves{
+      position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden;
+    }
+    .leaf-dot{
+      position:absolute;
+      width:8px;height:8px;border-radius:50% 0 50% 0;
+      background:rgba(126,217,160,0.35);
+      animation:leafDrift linear infinite;
+    }
+    @keyframes leafDrift{
+      0%  {transform:translateY(100vh) rotate(0deg);opacity:0;}
+      10% {opacity:1;}
+      90% {opacity:0.6;}
+      100%{transform:translateY(-120px) rotate(360deg);opacity:0;}
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media(max-width:968px){
+      .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--ivory);flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line);gap:4px;}
+      .nav-menu.open{display:flex;}
+      .mob-btn{display:flex;}
+      .nav-cta{display:none;}
+      .hero-inner{grid-template-columns:1fr;gap:40px;padding-top:60px;}
+      .hero-logo-showcase{display:none;}
+      .intro-grid,.about-grid,.cgrid{grid-template-columns:1fr;gap:40px;}
+      .stats-inner{grid-template-columns:repeat(2,1fr);}
+      .fgrid{grid-template-columns:1fr 1fr;}
+      .intro-stamp{right:0;bottom:-10px;}
+      .bot-panel{width:300px;}
+    }
+    @media(max-width:640px){
+      .stats-inner{grid-template-columns:repeat(2,1fr);}
+      .fgrid{grid-template-columns:1fr;}
+      .section{padding:72px 0;}
+      .filter-row{flex-direction:column;align-items:stretch;}
+      .srch{margin-left:0;}
+      .srch input{width:100%;}
+      .frow{grid-template-columns:1fr;}
+      .float-bots{bottom:18px;right:18px;}
+      .bot-panel{right:60px;width:270px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ Drawer overlay ══ -->
+<div class="drawer-bg" id="drawerBg" onclick="closeDrawer()"></div>
+
+<!-- ══ Enquiry drawer ══ -->
+<div class="drawer" id="drawer">
+  <div class="dhead">
+    <h3>Enquiry List</h3>
+    <button class="dclose" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="dbody" id="drawerBody">
+    <div class="dempty"><span>🌿</span><p>No plants added yet.</p></div>
+  </div>
+  <div class="dfoot">
+    <p class="dnote">We'll confirm availability and arrange pickup/delivery for selected plants.</p>
+    <button class="btn btn-green" style="width:100%;justify-content:center;background:#25D366;" onclick="submitBulk()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send via WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- ══ Toast ══ -->
+<div class="toasts" id="toasts"></div>
+
+<!-- ══ Enquiry Modal ══ -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal" style="border-top:3px solid #25D366;max-width:400px;">
+    <button class="mclose" onclick="closeMd()">✕</button>
+    <h3>Quick Enquiry</h3>
+    <p>Interested in this plant? Contact us directly on WhatsApp!</p>
+    <div class="m-chip">
+      <strong id="mdPlant">—</strong>
+      <small id="mdMeta">—</small>
+    </div>
+    <!-- WhatsApp direct button -->
+    <a id="mdWaBtn" href="#" target="_blank" onclick="closeMd()"
+       style="display:flex;align-items:center;justify-content:center;gap:10px;
+              width:100%;padding:15px;border-radius:10px;
+              background:#25D366;color:white;text-decoration:none;
+              font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;
+              box-shadow:0 4px 18px rgba(37,211,102,0.35);
+              transition:all 0.25s ease;margin-bottom:12px;"
+       onmouseover="this.style.background='#1ebe5d';this.style.transform='translateY(-2px)'"
+       onmouseout="this.style.background='#25D366';this.style.transform='translateY(0)'">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat on WhatsApp
+    </a>
+    <button class="btn btn-outline-green" onclick="addToList()"
+            style="width:100%;justify-content:center;font-size:14px;">
+      + Add to Enquiry List
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+
+    <!-- LOGO — exact match to uploaded image -->
+    <a href="#home" class="nav-logo" style="text-decoration:none;">
+      <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:220px;height:auto;display:block;">
+          <g transform="translate(40,120)">
+            <ellipse fill="#2d5f3f" cx="120" cy="95" rx="42" ry="78"/>
+            <ellipse fill="#2d5f3f" cx="55" cy="165" rx="42" ry="75" transform="rotate(-50 55 165)"/>
+            <ellipse fill="#2d5f3f" cx="185" cy="165" rx="42" ry="75" transform="rotate(50 185 165)"/>
+            <rect fill="#2d5f3f" x="112" y="150" width="16" height="120" rx="8"/>
+            <path fill="#2d5f3f" d="M25 270 L215 270 L205 305 L35 305 Z"/>
+            <path fill="#2d5f3f" d="M45 305 L195 305 L178 390 Q175 408 155 408 L85 408 Q65 408 62 390 Z"/>
+          </g>
+          <text x="355" y="195" font-size="150" fill="#2d5f3f" font-family="Georgia,serif" font-weight="500" letter-spacing="2">PLANT</text>
+          <text x="355" y="335" font-size="150" fill="#2d5f3f" font-family="Georgia,serif" font-weight="500" letter-spacing="2">HOUSE</text>
+          <text x="360" y="405" font-size="58" fill="#2d5f3f" font-family="Arial,sans-serif" font-weight="600" letter-spacing="8">ROSE NURSERY</text>
+        </svg>
+    </a>
+
+    <button class="mob-btn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home"       class="nav-link active">Home</a></li>
+      <li><a href="#plants"     class="nav-link">Plants</a></li>
+      <li><a href="#about"      class="nav-link">About</a></li>
+      <li><a href="#why-choose" class="nav-link">Why Us</a></li>
+      <li><a href="#contact"    class="nav-link">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openDrawer()">
+      Enquiry List
+      <span class="cta-badge" id="ctaBadge">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-cut"></div>
+
+  <!-- Floating plant name cards -->
+  <div class="hero-plants">
+    <div class="hp"><span class="hp-icon">🌴</span><span>Areca Palm</span></div>
+    <div class="hp"><span class="hp-icon">🌸</span><span>Hydrangea</span></div>
+    <div class="hp"><span class="hp-icon">🌿</span><span>Bird of Paradise</span></div>
+    <div class="hp"><span class="hp-icon">🪴</span><span>Fiddle Leaf Fig</span></div>
+    <div class="hp"><span class="hp-icon">🌺</span><span>Ixora Dwarf</span></div>
+    <div class="hp"><span class="hp-icon">🌱</span><span>Rosemary</span></div>
+    <div class="hp"><span class="hp-icon">🌳</span><span>Golden Cypress</span></div>
+  </div>
+
+  <!-- Rising leaf particles -->
+  <div class="hero-leaves" id="heroLeaves"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span></span>Pune's Finest Nursery</div>
+      <h1>Where Nature<br>Meets <em>Nurture</em></h1>
+      <p class="hero-desc">45+ plant varieties grown with care at Shiva Farm, Koregaon Mul. Healthy, vibrant, and affordable for every garden.</p>
+      <div class="hero-btns">
+        <a href="#plants" class="btn btn-ivory">Explore Plants</a>
+        <a href="#contact" class="btn btn-outline-w">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-logo-showcase">
+      <div class="hero-logo-card">
+        <!-- Large logo for hero -->
+        <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:auto;display:block;">
+          <g transform="translate(40,120)">
+            <ellipse fill="rgba(255,255,255,0.9)" cx="120" cy="95" rx="42" ry="78"/>
+            <ellipse fill="rgba(255,255,255,0.9)" cx="55" cy="165" rx="42" ry="75" transform="rotate(-50 55 165)"/>
+            <ellipse fill="rgba(255,255,255,0.9)" cx="185" cy="165" rx="42" ry="75" transform="rotate(50 185 165)"/>
+            <rect fill="rgba(255,255,255,0.9)" x="112" y="150" width="16" height="120" rx="8"/>
+            <path fill="rgba(255,255,255,0.9)" d="M25 270 L215 270 L205 305 L35 305 Z"/>
+            <path fill="rgba(255,255,255,0.9)" d="M45 305 L195 305 L178 390 Q175 408 155 408 L85 408 Q65 408 62 390 Z"/>
+          </g>
+          <text x="355" y="195" font-size="150" fill="rgba(255,255,255,0.9)" font-family="Georgia,serif" font-weight="500" letter-spacing="2">PLANT</text>
+          <text x="355" y="335" font-size="150" fill="rgba(255,255,255,0.9)" font-family="Georgia,serif" font-weight="500" letter-spacing="2">HOUSE</text>
+          <text x="360" y="405" font-size="58" fill="rgba(255,255,255,0.65)" font-family="Arial,sans-serif" font-weight="600" letter-spacing="8">ROSE NURSERY</text>
+        </svg>
+        </svg>
+        <div class="hlc-text">
+          <span class="hl-main">PLANT<br>HOUSE</span>
+          <span class="hl-sub">Rose Nursery</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Stats ══ -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">45+</span><span class="stat-lbl">Plant Varieties</span></div>
+    <div class="stat"><span class="stat-num">500+</span><span class="stat-lbl">Happy Customers</span></div>
+    <div class="stat"><span class="stat-num">₹6</span><span class="stat-lbl">Starting Price</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">Eco-Friendly</span></div>
+  </div>
+</div>
+
+<!-- ══ Intro ══ -->
+<section class="section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="sec-title">Growing Dreams,<br>One Plant at a Time</h2>
+        <p>At Plant House Rose Nursery, we believe every space deserves the beauty and vitality of nature. For years, we've been nurturing quality plants and helping gardeners — from beginners to experts — bring their green visions to life.</p>
+        <p>Our passion is simple: provide healthy, vibrant plants that thrive in your care, with guidance every step of the way.</p>
+        <a href="#plants" class="btn btn-green" style="margin-top:24px;display:inline-flex;">Browse Our Plants →</a>
+      </div>
+      <div class="intro-img reveal" style="transition-delay:.15s;position:relative;padding-bottom:20px;padding-right:20px;">
+        <img src="https://images.pexels.com/photos/1445416/pexels-photo-1445416.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Plant Nursery">
+        <div class="intro-stamp"><strong>5★</strong><span>Customer Rated</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Plants ══ -->
+<section id="plants" class="section sec-bg">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Catalogue</span>
+      <h2 class="sec-title">Our Plants</h2>
+      <p class="sec-sub">Healthy nursery plants in pots &amp; bags. Hover a card and tap <strong>Enquire</strong> — it opens WhatsApp so you can reach us directly!</p>
+    </div>
+    <div class="filter-row reveal">
+      <button class="fpill active" onclick="fp('all',this)">All</button>
+      <button class="fpill" onclick="fp('palm',this)">Palms</button>
+      <button class="fpill" onclick="fp('flowering',this)">Flowering</button>
+      <button class="fpill" onclick="fp('ficus',this)">Ficus</button>
+      <button class="fpill" onclick="fp('aromatic',this)">Aromatic</button>
+      <button class="fpill" onclick="fp('shrub',this)">Shrubs</button>
+      <div class="srch"><input type="text" id="ps" placeholder="Search plants…" oninput="sp(this.value)"></div>
+    </div>
+    <div class="pgrid" id="pgrid">
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://m.media-amazon.com/images/I/610g5KY299L._AC_UF1000,1000_QL80_.jpg" alt="Ixora"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Ixora (Dwarf)','8 Inch Pot · 1 Feet','Rs. 100');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Ixora (Dwarf)','8 Inch Pot · 1 Feet','Rs. 100');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Ixora (Dwarf)','8 Inch Pot · 1 Feet','Rs. 100')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Ixora (Dwarf)</p><p class="pmeta">8 Inch Pot · Height: 1 Feet</p><p class="pprice">Rs. 100</p></div></div>
+
+      <div class="pcard" data-cat="fern"><div class="pcard-img"><img src="https://paudhshala.com/media/catalog/product/cache/cddf5fb8ab734d8b46ea9aa1099e7b62/b/u/buy-asplenium_nidus-plant.jpg" alt="Bird Nest Fern"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Bird Nest Fern','6 Inch Pot · 1 Feet','Rs. 100');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Bird Nest Fern','6 Inch Pot · 1 Feet','Rs. 100');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Bird Nest Fern','6 Inch Pot · 1 Feet','Rs. 100')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Fern</span><p class="pname">Bird Nest Fern</p><p class="pmeta">6 Inch Pot · Height: 1 Feet</p><p class="pprice">Rs. 100</p></div></div>
+
+      <div class="pcard" data-cat="shrub"><div class="pcard-img"><img src="https://growcerys.com/cdn/shop/products/IMG_E6249.jpg?v=1671204854" alt="China Doll"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Radermachera (China Doll)','9×9 Bag · 2 Feet','Rs. 50');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Radermachera (China Doll)','9×9 Bag · 2 Feet','Rs. 50');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Radermachera (China Doll)','9×9 Bag · 2 Feet','Rs. 50')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Shrub</span><p class="pname">Radermachera (China Doll)</p><p class="pmeta">9×9 Bag · Height: 2 Feet</p><p class="pprice">Rs. 50</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://nurserylive.com/cdn/shop/products/nurserylive-g-gardenia-ananta-plant-723969.jpg?v=1679750052" alt="Ananta Gardenia"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Ananta Gardenia','9×9 Bag · 2 Feet','Rs. 25');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Ananta Gardenia','9×9 Bag · 2 Feet','Rs. 25');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Ananta Gardenia','9×9 Bag · 2 Feet','Rs. 25')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Ananta Gardenia</p><p class="pmeta">9×9 Bag · Height: 2 Feet</p><p class="pprice">Rs. 25</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://nurserynisarga.in/wp-content/uploads/2025/03/Tecoma_Dwarf_Bicolor_1.webp" alt="Tikoma"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Tikoma Biocolor','5×6 Bag · 6 Inch','Rs. 15');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Tikoma Biocolor','5×6 Bag · 6 Inch','Rs. 15');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Tikoma Biocolor','5×6 Bag · 6 Inch','Rs. 15')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Tikoma Biocolor</p><p class="pmeta">5×6 Bag · Height: 6 Inch</p><p class="pprice">Rs. 15</p></div></div>
+
+      <div class="pcard" data-cat="aromatic"><div class="pcard-img"><img src="https://himadriaquatics.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-09-at-9.00.11-PM.jpeg" alt="Kamini"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Kamini','9×9 Bag · 2.5–3 Feet','Rs. 40');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Kamini','9×9 Bag · 2.5–3 Feet','Rs. 40');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Kamini','9×9 Bag · 2.5–3 Feet','Rs. 40')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Aromatic</span><p class="pname">Kamini</p><p class="pmeta">9×9 Bag · Height: 2.5–3 Feet</p><p class="pprice">Rs. 40</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://nurserylive.com/cdn/shop/products/nurserylive-g-krishna-kamal-passion-flower-passiflora-incarnata-purple-plant-158241_600x600.jpg?v=1751707349" alt="Krishnkmal"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Krishnkmal Fashion Fruit','8 Inch Pot · 2 Feet','Rs. 80');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Krishnkmal Fashion Fruit','8 Inch Pot · 2 Feet','Rs. 80');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Krishnkmal Fashion Fruit','8 Inch Pot · 2 Feet','Rs. 80')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Krishnkmal Fashion Fruit</p><p class="pmeta">8 Inch Pot · Height: 2 Feet</p><p class="pprice">Rs. 80</p></div></div>
+
+      <div class="pcard" data-cat="palm"><div class="pcard-img"><img src="https://rootsraja.in/cdn/shop/files/Chamaedorea.png?v=1742595744" alt="Chamaedorea Palm"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Chamaedorea Palm','6 Inch Pot · 1 Feet','Rs. 120');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Chamaedorea Palm','6 Inch Pot · 1 Feet','Rs. 120');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Chamaedorea Palm','6 Inch Pot · 1 Feet','Rs. 120')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Palm</span><p class="pname">Chamaedorea Palm</p><p class="pmeta">6 Inch Pot · Height: 1 Feet</p><p class="pprice">Rs. 120</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://unlimitedgreens.com/cdn/shop/files/6_1_7b1ecc0f-4f81-42f2-9b84-f6db421f5c76.jpg?v=1764917571" alt="Hibiscus"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Hibiscus (Dwarf &amp; Hybrid)','9×9 Bag · 1 Feet','Rs. 25');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Hibiscus (Dwarf &amp; Hybrid)','9×9 Bag · 1 Feet','Rs. 25');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Hibiscus (Dwarf &amp; Hybrid)','9×9 Bag · 1 Feet','Rs. 25')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Hibiscus (Dwarf &amp; Hybrid)</p><p class="pmeta">9×9 Bag · Height: 1 Feet</p><p class="pprice">Rs. 25</p></div></div>
+
+      <div class="pcard" data-cat="shrub"><div class="pcard-img"><img src="https://www.hugaplant.com/cdn/shop/products/MAIN_8fa6f626-879b-4144-a73d-a5e21fed2ea7.png?v=1675417774" alt="Golden Cypress"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Golden Cypress','14 Inch Pot · 4 Feet','Rs. 400');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Golden Cypress','14 Inch Pot · 4 Feet','Rs. 400');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Golden Cypress','14 Inch Pot · 4 Feet','Rs. 400')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Conifer</span><p class="pname">Golden Cypress</p><p class="pmeta">14 Inch Pot · Height: 4 Feet</p><p class="pprice">Rs. 400</p></div></div>
+
+      <div class="pcard" data-cat="ficus"><div class="pcard-img"><img src="https://m.media-amazon.com/images/I/51zMUzjqmOL._AC_UF1000,1000_QL80_.jpg" alt="Kristina Ficus"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Kristina Ficus','9×9 Bag · 2 Feet','Rs. 40');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Kristina Ficus','9×9 Bag · 2 Feet','Rs. 40');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Kristina Ficus','9×9 Bag · 2 Feet','Rs. 40')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Ficus</span><p class="pname">Kristina Ficus</p><p class="pmeta">9×9 Bag · Height: 2 Feet</p><p class="pprice">Rs. 40</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://m.media-amazon.com/images/I/51V1Na66EZL._AC_UF1000,1000_QL80_.jpg" alt="Bird of Paradise"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Bird Of Paradise','8 Inch Pot · 3 Feet','Rs. 150');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Bird Of Paradise','8 Inch Pot · 3 Feet','Rs. 150');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Bird Of Paradise','8 Inch Pot · 3 Feet','Rs. 150')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Bird Of Paradise</p><p class="pmeta">8 Inch Pot · Height: 3 Feet</p><p class="pprice">Rs. 150</p></div></div>
+
+      <div class="pcard" data-cat="palm"><div class="pcard-img"><img src="https://nurserylive.com/cdn/shop/files/areca.jpg?v=1751753779" alt="Areca Palm"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Areca Palm','9×9 Bag · 2–3 Feet','Rs. 50');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Areca Palm','9×9 Bag · 2–3 Feet','Rs. 50');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Areca Palm','9×9 Bag · 2–3 Feet','Rs. 50')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Palm</span><p class="pname">Areca Palm</p><p class="pmeta">9×9 Bag · Height: 2–3 Feet</p><p class="pprice">Rs. 50</p></div></div>
+
+      <div class="pcard" data-cat="aromatic"><div class="pcard-img"><img src="https://static.wixstatic.com/media/ca2bf2_e872003984c141d3a1517e9a00760485~mv2.jpeg/v1/fit/w_500,h_500,q_90/file.jpg" alt="Moti Mogra"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Moti Mogra','9×9 Bag · 1 Feet','Rs. 20');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Moti Mogra','9×9 Bag · 1 Feet','Rs. 20');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Moti Mogra','9×9 Bag · 1 Feet','Rs. 20')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Aromatic</span><p class="pname">Moti Mogra</p><p class="pmeta">9×9 Bag · Height: 1 Feet</p><p class="pprice">Rs. 20</p></div></div>
+
+      <div class="pcard" data-cat="palm"><div class="pcard-img"><img src="https://lalitenterprise.com/cdn/shop/files/Lady_Finger_Palm_Plant.webp?v=1751631026" alt="Raphis Palm"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Raphis Palm','4×4 Bag · 4 Inch','Rs. 20');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Raphis Palm','4×4 Bag · 4 Inch','Rs. 20');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Raphis Palm','4×4 Bag · 4 Inch','Rs. 20')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Palm</span><p class="pname">Raphis Palm</p><p class="pmeta">4×4 Bag · Height: 4 Inch</p><p class="pprice">Rs. 20</p></div></div>
+
+      <div class="pcard" data-cat="aromatic"><div class="pcard-img"><img src="https://nurserynisarga.in/wp-content/uploads/2021/05/rosemary-1090419_1920.webp" alt="Rosemary"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Rosemary','Netpot Tray','Rs. 6');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Rosemary','Netpot Tray','Rs. 6');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Rosemary','Netpot Tray','Rs. 6')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Aromatic</span><p class="pname">Rosemary</p><p class="pmeta">Netpot Tray</p><p class="pprice">Rs. 6</p></div></div>
+
+      <div class="pcard" data-cat="ficus"><div class="pcard-img"><img src="https://plantshub.in/wp-content/uploads/2023/10/dwarf-ficus-lyrata-fiddle-leaf-fig-plant-pot-included-1-trothic-original-imafwah9pmdnqwkp.webp" alt="Lyrata Ficus"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Lyrata Ficus','6 Inch Pot · 2 Feet','Rs. 100');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Lyrata Ficus','6 Inch Pot · 2 Feet','Rs. 100');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Lyrata Ficus','6 Inch Pot · 2 Feet','Rs. 100')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Ficus</span><p class="pname">Lyrata Ficus</p><p class="pmeta">6 Inch Pot · Height: 2 Feet</p><p class="pprice">Rs. 100</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://thumbs.dreamstime.com/b/dwarf-bougainvillea-flowers-blur-background-small-hot-pink-tinge-purple-color-stamen-sticking-out-white-300871839.jpg" alt="Bougainvillea"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Bougainvillea Dwarf','9×9 Bag · 2 Feet','Rs. 40');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Bougainvillea Dwarf','9×9 Bag · 2 Feet','Rs. 40');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Bougainvillea Dwarf','9×9 Bag · 2 Feet','Rs. 40')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Bougainvillea Dwarf</p><p class="pmeta">9×9 Bag · Height: 2 Feet</p><p class="pprice">Rs. 40</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://nurserylive.com/cdn/shop/products/nurserylive-hydrangea-macrophylla-pink-plant.jpg?v=1634222088" alt="Hydrangea"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Hydrangea','6 Inch Pot · 6 Inch','Rs. 50');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Hydrangea','6 Inch Pot · 6 Inch','Rs. 50');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Hydrangea','6 Inch Pot · 6 Inch','Rs. 50')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Hydrangea</p><p class="pmeta">6 Inch Pot · Height: 6 Inch</p><p class="pprice">Rs. 50</p></div></div>
+
+      <div class="pcard" data-cat="shrub"><div class="pcard-img"><img src="https://lalitenterprise.com/cdn/shop/files/Shami_Patra_Plant_4.webp?v=1759578784&width=1445" alt="Shami"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Shami','9×9 Bag · 2 Feet','Rs. 30');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Shami','9×9 Bag · 2 Feet','Rs. 30');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Shami','9×9 Bag · 2 Feet','Rs. 30')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Sacred</span><p class="pname">Shami</p><p class="pmeta">9×9 Bag · Height: 2 Feet</p><p class="pprice">Rs. 30</p></div></div>
+
+      <div class="pcard" data-cat="ficus"><div class="pcard-img"><img src="https://m.media-amazon.com/images/I/61AX2nGOxeL._AC_UF1000,1000_QL80_.jpg" alt="Schefflera"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Schefflera Variegated','6 Inch Pot · 8 Inch','Rs. 40');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Schefflera Variegated','6 Inch Pot · 8 Inch','Rs. 40');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Schefflera Variegated','6 Inch Pot · 8 Inch','Rs. 40')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Foliage</span><p class="pname">Schefflera Variegated</p><p class="pmeta">6 Inch Pot · Height: 8 Inch</p><p class="pprice">Rs. 40</p></div></div>
+
+      <div class="pcard" data-cat="aromatic"><div class="pcard-img"><img src="https://m.media-amazon.com/images/I/71PgbFjuqTL._AC_UF1000,1000_QL80_.jpg" alt="Kadipatta"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Kadipatta (Methaneem)','9×9 Bag · 6 Inch','Rs. 20');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Kadipatta (Methaneem)','9×9 Bag · 6 Inch','Rs. 20');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Kadipatta (Methaneem)','9×9 Bag · 6 Inch','Rs. 20')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Aromatic</span><p class="pname">Kadipatta (Methaneem)</p><p class="pmeta">9×9 Bag · Height: 6 Inch</p><p class="pprice">Rs. 20</p></div></div>
+
+      <div class="pcard" data-cat="flowering"><div class="pcard-img"><img src="https://nurserylive.com/cdn/shop/products/nurserylive-hydrangea-macrophylla-pink-plant.jpg?v=1634222088" alt="Hydrangea Pink"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Bird Of Paradise (Large)','12 Inch Pot · 4 Feet','Rs. 350');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Bird Of Paradise (Large)','12 Inch Pot · 4 Feet','Rs. 350');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Bird Of Paradise (Large)','12 Inch Pot · 4 Feet','Rs. 350')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Flowering</span><p class="pname">Bird Of Paradise (Large)</p><p class="pmeta">12 Inch Pot · Height: 4 Feet</p><p class="pprice">Rs. 350</p></div></div>
+
+      <div class="pcard" data-cat="palm"><div class="pcard-img"><img src="https://plantsguru.com/cdn/shop/files/Table_Palm_-_Umbrella_Palm_Plant_2.jpg?v=1746215728&width=416" alt="Table Palm"><div class="pcard-overlay"><a class="ov-wa" href="#" onclick="goWa('Table Palm','9×9 Bag · 3 Feet','Rs. 50');return false;"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a><a class="ov-sms" href="#" onclick="goSms('Table Palm','9×9 Bag · 3 Feet','Rs. 50');return false;">📱 SMS</a><button class="ov-list" onclick="addDirect('Table Palm','9×9 Bag · 3 Feet','Rs. 50')">+ Add to List</button></div></div><div class="pcard-body"><span class="ptag">Palm</span><p class="pname">Table Palm</p><p class="pmeta">9×9 Bag · Height: 3 Feet</p><p class="pprice">Rs. 50</p></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ About ══ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img reveal">
+        <img src="https://images.pexels.com/photos/1445416/pexels-photo-1445416.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Our Nursery">
+      </div>
+      <div class="about-text reveal" style="transition-delay:.15s">
+        <span class="eyebrow">About Us</span>
+        <h2 class="sec-title">Our Story</h2>
+        <p>Plant House Rose Nursery was born from a simple love of nature and a dream to share that passion with our community. What started as a small backyard greenhouse has blossomed into a thriving nursery dedicated to exceptional plants and unparalleled service.</p>
+        <p>We believe in the power of plants to transform spaces, improve well-being, and connect us to the natural world.</p>
+        <ul class="vlist">
+          <li><div><strong>Quality</strong> — We never compromise on plant health and vitality</div></li>
+          <li><div><strong>Sustainability</strong> — Eco-friendly practices at the heart of all we do</div></li>
+          <li><div><strong>Customer Care</strong> — Your success is our success</div></li>
+          <li><div><strong>Passion</strong> — It shows in every plant we grow</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Why Us ══ -->
+<section id="why-choose" class="section sec-bg">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 class="sec-title">Why Plant House?</h2>
+      <p class="sec-sub">We go beyond selling plants — we're your partners in creating living green spaces.</p>
+    </div>
+    <div class="wgrid">
+      <div class="wcard reveal"><div class="wcard-icon">🌱</div><h3>Healthy Plants</h3><p>Every plant is inspected, nurtured, and guaranteed to be in peak condition when it reaches you.</p></div>
+      <div class="wcard reveal" style="transition-delay:.1s"><div class="wcard-icon">💰</div><h3>Affordable</h3><p>Quality without compromise. Competitive prices starting from ₹6 for every budget.</p></div>
+      <div class="wcard reveal" style="transition-delay:.2s"><div class="wcard-icon">👨‍🌾</div><h3>Expert Guidance</h3><p>Our team is always ready with tips, care advice, and answers to help your plants thrive.</p></div>
+      <div class="wcard reveal" style="transition-delay:.3s"><div class="wcard-icon">♻️</div><h3>Eco-Friendly</h3><p>Sustainable methods, organic fertilizers, and eco-conscious packaging to protect our planet.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Newsletter ══ -->
+<div class="nl">
+  <div class="nl-inner reveal">
+    <span class="eyebrow" style="color:rgba(255,255,255,0.5);">Stay Connected</span>
+    <h2>Plant Care Tips &amp; New Arrivals</h2>
+    <p>Join our community of plant lovers. Seasonal tips and stock updates straight to your inbox.</p>
+    <form class="nl-form" onsubmit="subNl(event)">
+      <input type="email" id="nlE" placeholder="Your email address…" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- ══ Contact ══ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="sec-title">Visit Us or Reach Out</h2>
+      <p class="sec-sub">Whether it's a question, a visit, or a bulk order — we'd love to hear from you.</p>
+    </div>
+    <div class="cgrid">
+      <div class="cinfo reveal">
+        <div class="citem"><div class="cico">📍</div><div><h4>Visit Us</h4><p>Shiva Farm, Koregaon Mul,<br>Solapur–Pune Hwy,<br>Pune, Maharashtra 412202</p></div></div>
+        <div class="citem"><div class="cico">📞</div><div><h4>Call Us</h4><p><a href="tel:+919673642543">+91 9673642543</a></p></div></div>
+        <div class="citem"><div class="cico">✉️</div><div><h4>Email Us</h4><p><a href="mailto:arvindkad9@gmail.com">arvindkad9@gmail.com</a></p></div></div>
+        <div class="citem"><div class="cico">🕐</div><div><h4>Hours</h4><p>Mon–Sat: 8 AM – 6 PM<br>Sunday: 10 AM – 4 PM</p></div></div>
+      </div>
+      <div class="cform-box reveal" style="transition-delay:.15s">
+        <h3>Send a Message</h3>
+        <p class="csub">We reply within 24 hours.</p>
+        <form id="cForm" onsubmit="subCf(event)">
+          <div class="frow">
+            <div class="fg"><label>Name *</label><input type="text" id="cfN" placeholder="Priya Sharma" required></div>
+            <div class="fg"><label>Phone</label><input type="tel" id="cfP" placeholder="+91 98765 43210"></div>
+          </div>
+          <div class="fg"><label>Email *</label><input type="email" id="cfE" placeholder="your@email.com" required></div>
+          <div class="fg"><label>Message *</label><textarea id="cfM" rows="4" placeholder="Tell us about your plant needs…" required></textarea></div>
+          <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;">Send Message</button>
+        </form>
+        <div class="fsuccess" id="fsucc"><span class="fsi">✅</span><h4>Message Sent!</h4><p>Thank you! We'll reply within 24 hours.</p></div>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.9687910465036!2d74.10708749999999!3d18.485072799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e7e4ab5bf1bd%3A0xc93f38fd4c16cf61!2sPLANT%20HOUSE%20ROSE%20NURSERY!5e0!3m2!1sen!2sin!4v1770231563776!5m2!1sen!2sin" width="100%" height="390" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Footer ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="#home" class="flogo">
+          <div class="flogo-icon" style="margin-bottom:8px;">
+            <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:auto;display:block;">
+              <g transform="translate(40,120)">
+                <ellipse fill="rgba(255,255,255,0.85)" cx="120" cy="95" rx="42" ry="78"/>
+                <ellipse fill="rgba(255,255,255,0.85)" cx="55" cy="165" rx="42" ry="75" transform="rotate(-50 55 165)"/>
+                <ellipse fill="rgba(255,255,255,0.85)" cx="185" cy="165" rx="42" ry="75" transform="rotate(50 185 165)"/>
+                <rect fill="rgba(255,255,255,0.85)" x="112" y="150" width="16" height="120" rx="8"/>
+                <path fill="rgba(255,255,255,0.85)" d="M25 270 L215 270 L205 305 L35 305 Z"/>
+                <path fill="rgba(255,255,255,0.85)" d="M45 305 L195 305 L178 390 Q175 408 155 408 L85 408 Q65 408 62 390 Z"/>
+              </g>
+              <text x="355" y="195" font-size="150" fill="rgba(255,255,255,0.9)" font-family="Georgia,serif" font-weight="500" letter-spacing="2">PLANT</text>
+              <text x="355" y="335" font-size="150" fill="rgba(255,255,255,0.9)" font-family="Georgia,serif" font-weight="500" letter-spacing="2">HOUSE</text>
+              <text x="360" y="405" font-size="58" fill="rgba(255,255,255,0.6)" font-family="Arial,sans-serif" font-weight="600" letter-spacing="8">ROSE NURSERY</text>
+            </svg>
+          </div>
+        </a>
+        <p>Growing dreams, one plant at a time. Quality nursery plants at Shiva Farm, Koregaon Mul, Pune.</p>
+        <div class="social-row">
+          <a href="#" class="sb" aria-label="Facebook">fb</a>
+          <a href="#" class="sb" aria-label="Instagram">ig</a>
+          <a href="#" class="sb" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#plants">Our Plants</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why-choose">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919673642543">+91 9673642543</a></li>
+          <li><a href="mailto:arvindkad9@gmail.com">arvindkad9@gmail.com</a></li>
+          <li><a href="#contact">Shiva Farm, Pune</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">© 2025 Plant House Rose Nursery · All rights reserved · Made with care in Pune</div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     FLOATING BOTS — bottom right corner
+══════════════════════════════════════ -->
+<div class="float-bots" id="floatBots">
+
+  <!-- ── WHATSAPP BOT ── -->
+  <div style="position:relative;">
+    <div class="bot-panel" id="waPanel" style="bottom:64px;">
+      <div class="bp-head" style="background:#075e54;">
+        <div class="bp-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="bp-info">
+          <span class="bp-name">WhatsApp Owner</span>
+          <span class="bp-status">Typically replies in minutes</span>
+        </div>
+        <button class="bp-close" onclick="toggleBot('waPanel','bt-whatsapp')">✕</button>
+      </div>
+      <div class="wa-panel-body">
+        <div class="wa-greeting">
+          <strong>👋 Hi there!</strong>
+          Chat directly with the nursery owner on WhatsApp. Choose what you need:
+        </div>
+        <div class="wa-options">
+          <a class="wa-opt" href="https://wa.me/919673642543?text=Hi!%20I'm%20interested%20in%20your%20plants.%20Can%20you%20tell%20me%20what's%20available?" target="_blank">
+            <span class="wa-ico">🌿</span><span>Enquire about plants</span><span class="wa-arrow">›</span>
+          </a>
+          <a class="wa-opt" href="https://wa.me/919673642543?text=Hi!%20I'd%20like%20to%20know%20about%20prices%20and%20varieties%20available." target="_blank">
+            <span class="wa-ico">💰</span><span>Ask about prices</span><span class="wa-arrow">›</span>
+          </a>
+          <a class="wa-opt" href="https://wa.me/919673642543?text=Hi!%20I'd%20like%20to%20place%20a%20bulk%20order.%20Can%20we%20discuss?" target="_blank">
+            <span class="wa-ico">📦</span><span>Bulk / wholesale order</span><span class="wa-arrow">›</span>
+          </a>
+          <a class="wa-opt" href="https://wa.me/919673642543?text=Hi!%20Can%20you%20tell%20me%20your%20nursery%20location%20and%20timings?" target="_blank">
+            <span class="wa-ico">📍</span><span>Location &amp; timings</span><span class="wa-arrow">›</span>
+          </a>
+        </div>
+      </div>
+      <div class="wa-footer">
+        <a href="https://wa.me/919673642543" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Open WhatsApp Chat
+        </a>
+      </div>
+    </div>
+    <button class="bot-trigger bt-whatsapp" id="bt-whatsapp" onclick="toggleBot('waPanel','bt-whatsapp')" aria-label="WhatsApp">
+      <span class="bt-label">WhatsApp Us</span>
+      <div class="bt-dot"></div>
+      <svg fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </button>
+  </div>
+
+  <!-- ── CHAT BOT ── -->
+  <div style="position:relative;">
+    <div class="bot-panel" id="chatPanel" style="bottom:64px;">
+      <div class="bp-head chat-head">
+        <div class="bp-avatar">🌿</div>
+        <div class="bp-info">
+          <span class="bp-name">Plant Assistant</span>
+          <span class="bp-status">Online · Replies instantly</span>
+        </div>
+        <button class="bp-close" onclick="toggleBot('chatPanel','bt-chat')">✕</button>
+      </div>
+      <div class="bp-msgs" id="chatMsgs">
+        <div class="msg bot">
+          <div class="msg-avatar">🌿</div>
+          <div class="msg-bubble">Hello! 👋 Welcome to Plant House Rose Nursery. How can I help you today?</div>
+        </div>
+      </div>
+      <div class="qr-wrap" id="quickReplies">
+        <button class="qr" onclick="qr('What plants do you have?')">Our plants</button>
+        <button class="qr" onclick="qr('What are your prices?')">Prices</button>
+        <button class="qr" onclick="qr('How do I place an order?')">Ordering</button>
+        <button class="qr" onclick="qr('Store timings?')">Timings</button>
+      </div>
+      <div class="bp-input-row">
+        <input type="text" id="chatInput" placeholder="Ask about plants…" onkeydown="if(event.key==='Enter')sendChat()">
+        <button class="bp-send" onclick="sendChat()">
+          <svg fill="white" width="16" height="16" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+        </button>
+      </div>
+    </div>
+    <button class="bot-trigger bt-chat" id="bt-chat" onclick="toggleBot('chatPanel','bt-chat')" aria-label="Chat">
+      <span class="bt-label">Chat with us</span>
+      <div class="bt-dot"></div>
+      <!-- Chat bubble icon -->
+      <svg fill="white" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    </button>
+  </div>
+
+</div>
+<!-- ══ End floating bots ══ -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── Config ── */
+const API_BASE = 'http://localhost:3001/api';
+const USE_BACKEND = false;
+let cart = [], curPlant = null;
+
+/* ── Toast ── */
+function toast(msg) {
+  const b = document.getElementById('toasts');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<span>✓</span> ${msg}`;
+  b.appendChild(t);
+  setTimeout(() => t.remove(), 3800);
+}
+
+/* ── API ── */
+async function api(ep, data) {
+  if (!USE_BACKEND) { await new Promise(r => setTimeout(r, 550)); return { success: true }; }
+  const r = await fetch(API_BASE + ep, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+  return r.json();
+}
+
+/* ── Navbar ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50);
+  document.querySelectorAll('section[id]').forEach(s => {
+    const t = s.offsetTop - 100, b = t + s.offsetHeight;
+    if (scrollY >= t && scrollY < b)
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + s.id));
+  });
+});
+function toggleMenu() { document.getElementById('navMenu').classList.toggle('open'); }
+document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => document.getElementById('navMenu').classList.remove('open')));
+
+/* ── Reveal ── */
+const ro = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ── Plants ── */
+function fp(cat, btn) {
+  document.querySelectorAll('.fpill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pcard').forEach(c => c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none');
+}
+function sp(q) {
+  const lq = q.toLowerCase();
+  document.querySelectorAll('.pcard').forEach(c => c.style.display = c.querySelector('.pname').textContent.toLowerCase().includes(lq) ? '' : 'none');
+}
+
+/* ── Enquiry modal ── */
+const WA_NUM = '919673642543';
+const SMS_NUM = '919673642543';
+function waLink(msg) { return `https://wa.me/${WA_NUM}?text=${encodeURIComponent(msg)}`; }
+function smsLink(msg) { return `sms:+${SMS_NUM}?body=${encodeURIComponent(msg)}`; }
+function plantMsg(name, meta, price) {
+  return `Hi! 👋 I'm interested in purchasing:\n\n🌿 *${name}*\n📦 ${meta}\n💰 ${price}\n\nCould you please confirm availability? Thank you!`;
+}
+
+function goWa(name, meta, price) {
+  window.open(waLink(plantMsg(name, meta, price)), '_blank');
+}
+function goSms(name, meta, price) {
+  window.location.href = smsLink(plantMsg(name, meta, price));
+}
+function addDirect(name, meta, price) {
+  curPlant = { plantName: name, meta, price };
+  let img = '';
+  document.querySelectorAll('.pcard').forEach(c => { if (c.querySelector('.pname')?.textContent.trim() === name) img = c.querySelector('img')?.src || ''; });
+  if (cart.find(i => i.plantName === name)) { toast('Already in your list.'); return; }
+  cart.push({ plantName: name, meta, price, img });
+  updateDrawer(); toast(`"${name}" added to list. 🌿`);
+}
+
+/* keep om() as alias just in case */
+function om(name, meta, price) { goWa(name, meta, price); }
+function closeMd() { document.getElementById('modalBg').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('modalBg').addEventListener('click', function(e) { if (e.target === this) closeMd(); });
+
+function addToList() {
+  if (!curPlant) return;
+  addDirect(curPlant.plantName, curPlant.meta, curPlant.price);
+  closeMd();
+}
+
+function submitBulk() {
+  if (!cart.length) { toast('Add some plants first!'); return; }
+  const lines = cart.map(i => `• *${i.plantName}* — ${i.price} (${i.meta})`).join('\n');
+  const msg = `Hi! 👋 I'm interested in the following plants from Plant House Rose Nursery:\n\n${lines}\n\nCould you please confirm availability and pricing? Thank you!`;
+  window.open(waLink(msg), '_blank');
+  cart = []; updateDrawer(); closeDrawer(); toast('Opening WhatsApp with your list! 🌿');
+}
+function updateDrawer() {
+  const b = document.getElementById('ctaBadge'); b.textContent = cart.length;
+  const db = document.getElementById('drawerBody');
+  if (!cart.length) { db.innerHTML = '<div class="dempty"><span>🌿</span><p>No plants added yet.</p></div>'; return; }
+  db.innerHTML = cart.map((it, i) => `
+    <div class="ditem">
+      <img src="${it.img}" alt="${it.plantName}" onerror="this.src='https://via.placeholder.com/58x58/e8f0eb/2d5f3f?text=🌿'">
+      <div class="ditem-info"><h5>${it.plantName}</h5><small>${it.meta}</small><div class="ditem-price">${it.price}</div></div>
+      <button class="ditem-rm" onclick="rmCart(${i})">✕</button>
+    </div>`).join('');
+}
+function rmCart(i) { cart.splice(i, 1); updateDrawer(); toast('Removed.'); }
+function openDrawer() { document.getElementById('drawer').classList.add('open'); document.getElementById('drawerBg').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeDrawer() { document.getElementById('drawer').classList.remove('open'); document.getElementById('drawerBg').classList.remove('open'); document.body.style.overflow = ''; }
+/* ── Drawer ── */
+async function subCf(e) {
+  e.preventDefault(); const btn = e.target.querySelector('button[type=submit]'); btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const d = await api('/contact', { name: document.getElementById('cfN').value, email: document.getElementById('cfE').value, phone: document.getElementById('cfP').value, message: document.getElementById('cfM').value });
+    if (d.success) { document.getElementById('cForm').style.display = 'none'; document.getElementById('fsucc').style.display = 'block'; toast('Message sent!'); }
+  } catch { toast('Error — please call us directly.'); }
+  finally { btn.textContent = 'Send Message'; btn.disabled = false; }
+}
+
+/* ── Newsletter ── */
+async function subNl(e) {
+  e.preventDefault(); const btn = e.target.querySelector('button'); btn.textContent = '…'; btn.disabled = true;
+  await api('/newsletter', { email: document.getElementById('nlE').value });
+  toast('Subscribed! Thank you.'); document.getElementById('nlE').value = ''; btn.textContent = 'Subscribe'; btn.disabled = false;
+}
+
+/* ════════════════════
+   FLOATING BOT LOGIC
+════════════════════ */
+let openPanel = null;
+function toggleBot(panelId, btnId) {
+  const panel = document.getElementById(panelId);
+  const isOpen = panel.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.bot-panel').forEach(p => p.classList.remove('open'));
+  if (!isOpen) panel.classList.add('open');
+  openPanel = isOpen ? null : panelId;
+}
+
+/* ── Chatbot logic ── */
+const botResponses = {
+  default: "I'm happy to help! You can ask about our plants, prices, location, or how to place an order. 🌿",
+  greet: "Hello! Welcome to Plant House Rose Nursery. How can I assist you today? 😊",
+  plants: "We have 45+ varieties including Palms, Flowering plants, Ficus, Aromatic herbs, and Shrubs. Use the filters above to browse! 🌱",
+  price: "Our plants start from just ₹6 (Rosemary netpot). Most range from ₹15 to ₹400 depending on size and variety. All very affordable! 💚",
+  order: "Simply hover over any plant card and click 'Enquire', or add plants to your Enquiry List and send a bulk request. We'll confirm availability and delivery. 📋",
+  timing: "We're open Mon–Sat: 8 AM – 6 PM, and Sunday: 10 AM – 4 PM. Come visit us at Shiva Farm, Koregaon Mul, Pune! 📍",
+  location: "We're at Shiva Farm, Koregaon Mul, Solapur–Pune Highway, Pune, Maharashtra 412202. You can see us on the map in the Contact section! 🗺️",
+  contact: "You can call us at +91 9673642543 or email arvindkad9@gmail.com. Or fill the contact form below! 📞",
+  delivery: "We support both pickup from our nursery and local delivery in Pune. Reach out via phone or enquiry form for delivery details. 🚚",
+  care: "We give plant care guidance with every purchase! Ask us specific questions about any plant you're interested in. 🌿",
+  eco: "Yes! We use sustainable growing methods, organic fertilizers, and eco-conscious packaging. We care for the planet. ♻️",
+};
+
+function getBotResponse(msg) {
+  const m = msg.toLowerCase();
+  if (m.match(/hi|hello|hey|namaste/)) return botResponses.greet;
+  if (m.match(/plant|variety|varieties|have|stock|type/)) return botResponses.plants;
+  if (m.match(/price|cost|how much|₹|rs|rupee|cheap|afford/)) return botResponses.price;
+  if (m.match(/order|buy|purchase|enquire|how to|booking/)) return botResponses.order;
+  if (m.match(/time|timing|hour|open|close|when/)) return botResponses.timing;
+  if (m.match(/where|location|address|find|visit|farm/)) return botResponses.location;
+  if (m.match(/contact|phone|call|email|number/)) return botResponses.contact;
+  if (m.match(/deliver|ship|home|pickup/)) return botResponses.delivery;
+  if (m.match(/care|water|sun|soil|grow|maintain/)) return botResponses.care;
+  if (m.match(/eco|organic|sustain|environment|green/)) return botResponses.eco;
+  return botResponses.default;
+}
+
+function addChatMsg(text, role) {
+  const msgs = document.getElementById('chatMsgs');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.innerHTML = role === 'bot'
+    ? `<div class="msg-avatar">🌿</div><div class="msg-bubble">${text}</div>`
+    : `<div class="msg-bubble">${text}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const val = input.value.trim();
+  if (!val) return;
+  addChatMsg(val, 'user');
+  input.value = '';
+  document.getElementById('quickReplies').style.display = 'none';
+  setTimeout(() => addChatMsg(getBotResponse(val), 'bot'), 600);
+}
+
+function qr(text) {
+  addChatMsg(text, 'user');
+  document.getElementById('quickReplies').style.display = 'none';
+  setTimeout(() => addChatMsg(getBotResponse(text), 'bot'), 600);
+}
+
+/* ── Hero leaf particles ── */
+(function(){
+  const c = document.getElementById('heroLeaves');
+  if(!c) return;
+  [{l:8,d:12,dl:0},{l:18,d:16,dl:3},{l:28,d:10,dl:6},{l:38,d:14,dl:2},
+   {l:52,d:18,dl:8},{l:64,d:11,dl:1},{l:76,d:15,dl:5},{l:85,d:13,dl:4}
+  ].forEach(({l,d,dl},i)=>{
+    const el = document.createElement('div');
+    el.className = 'leaf-dot';
+    const sz = 6 + (i%4);
+    el.style.cssText = `left:${l}%;animation-duration:${d}s;animation-delay:-${dl}s;width:${sz}px;height:${sz}px;`;
+    c.appendChild(el);
+  });
+})();
+
+updateDrawer();
+</script>
+</body>
+</html>
